@@ -1,0 +1,31 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  CI:
+    runs-on: ubunto-latest
+    steps: 
+     - name: Docker Login
+       run: echo "executar login"
+       with:    
+          username: ${{ secrets.DOCKERHUB.USER }}
+          password: ${{ secrets.DOCKERHUB.PWD }}
+
+     -  name: efetuar o login no docker hub
+        run: echo "executar o docker login"
+     -  name: enviar a imagem par ao docker registry
+        run: echo "executar o docker push"
+  CD:
+    runs-on: ubunto-latest
+    steps:
+    needs: [CI]
+     - name: autenticar na aws
+       run: echo "autentiar na aws"
+      - name: executar o kubeconfig
+        run: echo "autentiar na aws"
+      - name: aplicar o deply
+        run: echo "executar o kubectl apply"
