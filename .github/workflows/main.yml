@@ -23,7 +23,7 @@
          file: src/kube-news/Dockerfile
          push: true
          tags: |
-          mateussouzaa/kube-news:${{ gihub.run_number }}
+          mateussouzaa/kube-news:${{ github.run_number }}
           mateussouzaa/kube-news:latest
    CD:
     runs-on: ubunto-latest
