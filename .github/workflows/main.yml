@@ -7,7 +7,7 @@
 
  jobs:
    CI:
-      runs-on: ubunto-latest
+      runs-on: ubuntu-latest
       steps: 
       - name: efetuar login no docker hub  
         run: echo "executar login"
