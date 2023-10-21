@@ -34,6 +34,6 @@
     - name: configuracao credencial aws
       uses: aws-actions/configure-aws-credentials@v4
       with:
-       aws-access-key-id: ${{ srecrets.AWS_ACESS_KEY_ID }}
-       aws-secret-access-key: ${{ srecrets.AWS_ACESS_KEY_PWD }}
+       aws-access-key-id: ${{ secrets.AWS_ACESS_KEY_ID }}
+       aws-secret-access-key: ${{ secrets.AWS_ACESS_KEY_PWD }}
        aws-region: us-east-1
