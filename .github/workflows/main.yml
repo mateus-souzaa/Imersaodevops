@@ -23,9 +23,4 @@ jobs:
     runs-on: ubunto-latest
     steps:
     needs: [CI]
-       - name: autenticar na aws
-         run: echo "autentiar na aws"
-       - name: executar o kubeconfig
-         run: echo "autentiar na aws"
-       - name: aplicar o deply
-         run: echo "executar o kubectl apply"
+      
