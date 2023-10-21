@@ -16,6 +16,7 @@
         with:    
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PWD }}
+      - name: Build and push Docker images  
         uses: docker/build-push-action@v5.0.0
         with:
          context: ./kube-news/src
