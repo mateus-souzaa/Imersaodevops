@@ -19,8 +19,8 @@
       - name: Build and push Docker images  
         uses: docker/build-push-action@v5.0.0
         with:
-         context: ./src
-         file: ./src/Dockerfile
+         context: .\kube-news\src
+         file: .\kube-news\src
          push: true
          tags: |
           mateussouzaa/kube-news:${{ github.run_number }}
