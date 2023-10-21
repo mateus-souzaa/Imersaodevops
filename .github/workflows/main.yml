@@ -26,8 +26,14 @@
           mateussouzaa/kube-news:${{ github.run_number }}
           mateussouzaa/kube-news:latest
    CD:
-    runs-on: ubunto-latest
+    runs-on: ubuntu-latest
     needs: CI
     steps:
-    - name: autentica na aws
-      run: echo "autenticar"
+    - name: Checkout do repositorio  
+      uses: actions/checkout@v4.1.1
+    - name: configuracao credencial aws
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+       aws-access-key-id: ${{ srecrets.AWS_ACESS_KEY_ID }}
+       aws-secret-access-key: ${{ srecrets.AWS_ACESS_KEY_PWD }}
+       aws-region: us-east-1
