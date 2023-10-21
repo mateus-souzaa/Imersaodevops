@@ -20,7 +20,7 @@
         uses: docker/build-push-action@v5.0.0
         with:
          context: ./kube-news/src
-         file: src/kube-news/Dockerfile
+         file: ./kube-news/src/Dockerfile
          push: true
          tags: |
           mateussouzaa/kube-news:${{ github.run_number }}
