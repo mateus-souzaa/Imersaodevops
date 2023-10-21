@@ -16,10 +16,16 @@
         with:    
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_PWD }}
-      - name: efetuar o login no docker hub
-        run: echo "executar o docker login"
-      - name: enviar a imagem par ao docker registry
-        run: echo "executar o docker push"
+      - name: construir imagem de container
+      - name: Build and push Docker images
+        uses: docker/build-push-action@v5.0.0
+        with:
+         context: ./kube-news/src
+         file: src/kube-news/Dockerfile
+         push: true
+         tags: |
+          mateussouzaa/kube-news:${{ gihub.run_number }}
+          mateussouzaa/kube-news:latest
    CD:
     runs-on: ubunto-latest
     needs: CI
